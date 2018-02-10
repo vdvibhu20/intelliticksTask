@@ -28,7 +28,6 @@ import { UserService } from '../config/config.service';
 export class indexComponent  {
   url: string;
   repositories: repostory[];
-  array: number[];
   sortBy: string;
   constructor(private userService: UserService){
     this.repositories=[];
@@ -64,7 +63,7 @@ export class indexComponent  {
         owner: data.owner.login,
         pushed_at: data.pushed_at,
         forks: data.forks_count
-      }
+      };
       this.repositories.push(new_repo);
       this.customSort();
     });
